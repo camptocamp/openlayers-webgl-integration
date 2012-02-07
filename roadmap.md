@@ -68,6 +68,13 @@ Fast client-side pixel operations allow:
 
 This milestone could be extended to allow limited tilt of the camera and the display of 3D building data in orthographic projections.
 
+### Extensions
+
+* Animated zoom
+
+* Limited tilt close to the surface (all tiles at same zoom level, limited visible area)
+
+
 
 
 Milestone 2: 3D terrain in Cartesian space
@@ -123,6 +130,14 @@ This milestone also provides a baseline for adding new features and functions, s
 
 * Visual effects such as horizon glow, background star maps and fog
 
+### Extensions
+
+* 3D buildings with perspective projection (fisheye effect)
+
+* Building shadows on flat plane
+
+* Building shadows on 3D terrain (complex)
+
 
 
 Milestone 3: The Earth as a sphere
@@ -152,6 +167,10 @@ Milestone 3: The Earth as a sphere
 
 This milestone adapts the technology built in milestone 2 to a true 3D globe.  The core algorithms remain unchanged, the primary developments are related to adapting the server-side processing code to a sphere, and more complex navigation and feature hit-testing on the client.
 
+### Extensions
+
+* Seamless zoom out from ground (Cartesian) to globe (Sphere) (complex)
+
 
 
 Milestone 4: The Earth as an ellipsoid
@@ -172,6 +191,13 @@ Milestone 4: The Earth as an ellipsoid
 ### Description
 
 This is an extension of milestone 3, but with more complicated mathematics required to handle navigation, data processing and picking.
+
+
+
+Open questions
+==============
+
+* Is it possible to degrade gracefully on non WebGL-compatible browsers, for example to fallback to a DOM, SVG or Canvas renderer? (complex)
 
 
 
