@@ -7,13 +7,13 @@ Objective
 
 This document attempts to technically analyse options for integrating WebGL and OpenLayers.
 
-There are currently two proposals:
+There are currently three proposals:
 
 1. Add a drawing framework abstraction layer to encapsulate differences between DOM rendering, 2D canvas, and WebGL (3D canvas).
 
 2. Create a WebGL-specific core and add an OpenLayers-compatible API wrapper.
 
-Put differently: how do you make a car/aeroplane hybrid?  Do you take an existing car and bolt on wings, a tail and a propeller so it can fly?  Or do you start with an aeroplane, add wheels and take off the wings when you want to use it on the road?  Which makes the better chassis for a car that can fly?
+3. Create a familiar, very OpenLayers-like, API around a WebGL core, with tweaks where required to fit better with a WebGL rather than a DOM/CSS core.
 
 In this document the phrase "manually" refers to operations that must be managed by the programmer in Javascript.  For example, the graphics card memory must be manually managed by the programmer: there is no garbage collection.
 
