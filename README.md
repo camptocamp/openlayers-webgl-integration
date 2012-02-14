@@ -84,4 +84,11 @@ Technical considerations: specific to 3D
 If the API is to be eventually extended to support 3D, fundamental objects must be extended or completely replaced.  For example, 2D coordinates must have an extra field added (z or elevation), and simple bounding boxes must be replaced with perspective projection-aware view frustums.  It is no longer possible to iterate over visible tiles with a nested for loop, instead cameras and streaming level-of-detail techniques must be employed.
 
 
+Useful links
+------------
+
+* http://www.html5rocks.com/en/tutorials/webgl/webgl_fundamentals/
+
+
+
 vim: set filetype=markdown spell spelllang=en:
