@@ -39,15 +39,35 @@ Due to differences between the renderers, only two types of coordinates are used
 Layer types
 -----------
 
-* Tiles (2D)
+Each of these layer types will require a specialized renderer.  As a result, they can be considered as the fundamental layer types.
 
-* Vectors (2D)
+### Tiles (2D)
 
-* Terrain elevation (2.5D)
+Raster tiles can be displayed directly in the DOM renderer, but need to be treated as textures by the WebGL renderer.  In 2.5D they need to be draped over the terrain.
 
-* Models (3D)
+### Vectors (2D)
 
-* Point clouds (3D)
+Vector layers can be rendered with SVG, VML or Canvas in the DOM renderer, but will need custom rendering functions in the WebGL render.
+
+### Labels (2D or 3D)
+
+Labels are effectively (position, label text) pairs. They need to be treated specially as they should always be drawn horizontally even if the base layer is rotated.
+
+### Terrain elevation (2.5D)
+
+Terrain elevation, possibly encoded in either JSON or raw VBO data, is not used in 2D.  The structure and metadata of such data is closely tied to the rendering algorithm and projection used.
+
+### Buildings (3D)
+
+In 3D, building data typically consists of a 3D model and a texture draped over it.  In 2D it might simply be an outline with a height (for shadows) or a more complex 2.5D object (c.f. Google MapsGL).
+
+### Vegetation (3D)
+
+Vegetation in 3D is typically rendered as the repetition of a set of very simple models.
+
+### Point clouds (3D)
+
+Point clouds are pure 3D objects, and are not used in 2D.
 
 
 Miscellaneous
