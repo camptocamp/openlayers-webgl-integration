@@ -31,7 +31,7 @@ The map is the master object.  It contains a single renderer object, which can e
 
 Layers are pure data providers. They provide raster, vector and eventually other types of content, but do not know how to render them.  Layers can have their own projections, which can be different from the map's projection in which they are used.  Individual layer objects can be shared between multiple maps.  When their content changes they fire "changed" events.
 
-Controls can manipulate both the map view and individual layers.  They should work in map projection coordinates.
+Controls can manipulate both the map view and individual layers.  They should work in map projection coordinates, and support both traditional and touch inputs.
 
 Due to differences between the renderers, only two types of coordinates are used: coordinates in the map's projection, and pixel coordinates relative to the DIV containing the map.  Map objects provide functions for converting between the two, using the View object and the map projection.  Layer objects can have their own projections, and all interactions with layers is through coordinates in their own local projection.
 
@@ -51,7 +51,7 @@ Vector layers can be rendered with SVG, VML or Canvas in the DOM renderer, but w
 
 ### Labels (2D or 3D)
 
-Labels are effectively (position, label text) pairs. They need to be treated specially as they should always be drawn horizontally even if the base layer is rotated.
+Labels are effectively (position, label text) pairs. They need to be treated specially so they can use pixel coordinates rather than map coordinates.  This also allows labels to be rotated independently of the map.
 
 ### Terrain elevation (2.5D)
 
@@ -78,6 +78,8 @@ Maps need to maintain a global clock for animations.
 Tile queues should be per-host to avoid being blocked by a single slow host.  Renderers should get tile URLs from tile layers, then request the actual image via the tile queue.  The tile queue can be reprioritized by the map when the view changes.
 
 Colors need to be RGBA-tuples of floating point values, with appropriate conversion.
+
+The Google Earth Plugin API provides an existing, standard API for virtual globes in the browser. It would probably make sense to implement it.
 
 The Closure Compiler and Library provides many advantages for development and distribution.
 

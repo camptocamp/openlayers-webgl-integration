@@ -21,11 +21,15 @@ Wish list
 
 * Client-side re-projection
 
+* Modular, custom builds
+
 * Graceful fall back on older browsers
 
 * Seamless transition from ground to globe
 
 * Dynamic building shadows
+
+* Google Earth Plugin API
 
 * Per-layer image processing effects
 
@@ -39,11 +43,15 @@ Wish list
 
 * Perspective projection
 
+* Touch interactions
+
 * Orthographic projection
 
 * Point clouds
 
 * Vegetation
+
+* Indoor navigation
 
 * Billboards
 
